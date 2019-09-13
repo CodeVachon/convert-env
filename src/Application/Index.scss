@@ -1,0 +1,82 @@
+$box-border: 2px #333 solid;
+$box-border-radius: 0.15rem;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#app {
+    display: flex;
+    min-height: 100vh;
+    background-color: #efefef;
+}
+
+.col {
+    flex-grow: 2;
+    padding: 1rem;
+}
+
+.btn {
+    background: #efefef;
+    transition: 0.6s;
+    border: $box-border;
+    border-radius: $box-border-radius;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    &:hover {
+        background-color: #fff;
+    }
+    margin-right: 0.5rem;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .btn {
+        margin-bottom: 1rem;
+        margin-right: 0rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .textarea-container {
+        margin: 1rem 0;
+        flex: 2;
+        display: flex;
+        textarea {
+            transition: 0.6s;
+            border: $box-border;
+            border-radius: $box-border-radius;
+            resize: none;
+            width: 100%;
+            &.error {
+                border-color: #900;
+                background-color: lighten(#900, 60%);
+            }
+        }
+    }
+}
